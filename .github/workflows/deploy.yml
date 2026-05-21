@@ -1,4 +1,4 @@
-name: Deploy React App
+name: Deploy React App to Hostinger
 
 on:
   push:
@@ -10,20 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # Install Dependencies
       - name: Install Dependencies
         run: npm install
 
+      # Build Vite React App
       - name: Build React App
         run: npm run build
 
+      # Deploy dist folder via SSH/SCP
       - name: Deploy via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -33,3 +38,8 @@ jobs:
           port: ${{ secrets.PORT }}
           source: "dist/*"
           target: "/home/${{ secrets.USERNAME }}/public_html"
+          strip_components: 1
+
+      # Optional Success Message
+      - name: Deployment Success
+        run: echo "Deployment completed successfully"
