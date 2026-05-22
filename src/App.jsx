@@ -1,14 +1,26 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Product from "./pages/Product";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/404";
 
-function App() {
+export default function App() {
   return (
-    <>
-     <div className="flex flex-col items-center justify-center min-h-screen">
-       <h1 className="text-center text-2xl font-bold">Developing By <a href="https://rancotechnology.com" className='text-blue-800' target="_blank" rel="noopener noreferrer">Ranco Tech</a></h1>
-       <p className="text-center text-lg">CI/CD Working Successfully</p>
-     </div>
-    </>
-  )
+    <BrowserRouter>
+      <div className="relative min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
 }
-
-export default App
