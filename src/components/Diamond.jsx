@@ -7,85 +7,117 @@ export default function Diamonds() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="diamonds" className="py-28 bg-obsidian overflow-hidden">
+    <section
+      id="diamonds"
+      className="bg-black text-white py-20 sm:py-28 overflow-hidden border-b border-white/5"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div
           ref={ref}
-          className={`flex flex-col md:flex-row md:items-end gap-6 justify-between mb-20 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          className={`flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 transition-all duration-700 ${
+            inView
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          }`}
         >
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="gold-line" />
-              <span className="section-label text-gold">Diamonds</span>
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-px bg-[#C6A769]" />
+
+              <span className="text-[11px] uppercase tracking-[0.32em] text-white/60 font-medium">
+                The 4Cs Of Diamonds
+              </span>
             </div>
-            <h2 className="section-title text-cream">
-              The 4Cs of a
+
+            <h2 className="text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.95] tracking-[-0.06em] font-semibold">
+              Understanding
               <br />
-              <em className="font-light italic text-gradient-gold">Diamond</em>
+              Diamond Quality
             </h2>
           </div>
-          <p className="font-body text-sm text-warm-gray font-light max-w-sm leading-relaxed">
-            Standardised globally in the 20th century, the 4Cs make diamonds
-            not only a fine ornament, but the finest investment for generations.
+
+          <p className="text-[15px] sm:text-[16px] leading-8 text-white/55 max-w-md">
+            The globally recognised 4Cs define the beauty, brilliance, and
+            value of every diamond — making it a timeless symbol of luxury and
+            investment.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="flex flex-col gap-0">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="space-y-4">
             {diamondCs.map((item, i) => (
               <button
                 key={item.word}
                 onClick={() => setActive(i)}
-                className={`flex items-center gap-6 py-6 border-b text-left group transition-all duration-300 ${active === i
-                    ? "border-gold"
-                    : "border-charcoal hover:border-warm-gray"
-                  }`}
+                className={`group w-full text-left border transition-all duration-300 p-6 sm:p-8 ${
+                  active === i
+                    ? "border-[#C6A769] bg-white/[0.03]"
+                    : "border-white/10 hover:border-white/30"
+                }`}
               >
-                <span
-                  className={`font-display text-5xl font-light transition-colors duration-300 w-16 flex-shrink-0 ${active === i ? "text-gold" : "text-charcoal group-hover:text-warm-gray"
+                <div className="flex items-start gap-5">
+                  <span
+                    className={`text-[46px] sm:text-[56px] leading-none tracking-[-0.05em] font-semibold transition-all duration-300 ${
+                      active === i
+                        ? "text-[#C6A769]"
+                        : "text-white/15 group-hover:text-white/40"
                     }`}
-                >
-                  {item.letter}
-                </span>
-                <div>
-                  <p
-                    className={`font-display text-2xl font-light transition-colors duration-300 ${active === i ? "text-cream" : "text-warm-gray group-hover:text-cream/70"
-                      }`}
                   >
-                    {item.word}
-                  </p>
-                  {active === i && (
-                    <p className="font-body text-xs text-warm-gray font-light mt-1 leading-relaxed max-w-sm">
+                    {item.letter}
+                  </span>
+
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between gap-5">
+                      <h3
+                        className={`text-[24px] sm:text-[28px] tracking-[-0.04em] font-semibold transition-all duration-300 ${
+                          active === i
+                            ? "text-white"
+                            : "text-white/70 group-hover:text-white"
+                        }`}
+                      >
+                        {item.word}
+                      </h3>
+
+                      {active === i && (
+                        <div className="w-10 h-px bg-[#C6A769]" />
+                      )}
+                    </div>
+
+                    <p
+                      className={`overflow-hidden transition-all duration-500 text-[14px] sm:text-[15px] leading-7 ${
+                        active === i
+                          ? "max-h-40 opacity-100 mt-4 text-white/60"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
                       {item.description}
                     </p>
-                  )}
+                  </div>
                 </div>
-                {active === i && (
-                  <div className="ml-auto w-8 h-px bg-gold flex-shrink-0" />
-                )}
               </button>
             ))}
           </div>
 
-          <div className="relative hidden lg:flex items-center justify-center">
-            <div className="relative w-80 h-80">
-              <div className="absolute inset-0 rounded-full border border-charcoal animate-float" />
-              <div className="absolute inset-8 rounded-full border border-charcoal/50 animate-float" style={{ animationDelay: "1s" }} />
-              <div className="absolute inset-16 rounded-full border border-gold/20 animate-float" style={{ animationDelay: "2s" }} />
+          <div className="hidden lg:flex justify-center">
+            <div className="relative w-[420px] h-[420px] flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full border border-white/10" />
 
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-7xl text-gradient-gold font-display mb-2 animate-float">
-                    ◇
-                  </div>
-                  <p className="font-display text-3xl font-light text-cream">
-                    {diamondCs[active].word}
-                  </p>
-                  <p className="text-[9px] tracking-ultra-wide uppercase font-body text-gold font-medium mt-1">
-                    The {active + 1}{active === 0 ? "st" : active === 1 ? "nd" : active === 2 ? "rd" : "th"} C
-                  </p>
-                </div>
+              <div className="absolute inset-10 rounded-full border border-white/5" />
+
+              <div className="absolute inset-20 rounded-full border border-[#C6A769]/20" />
+
+              <div className="w-[220px] h-[220px] rounded-full border border-[#C6A769]/30 bg-white/[0.02] backdrop-blur-sm flex flex-col items-center justify-center text-center p-10">
+                <span className="text-[82px] leading-none text-[#C6A769]">
+                  ◇
+                </span>
+
+                <h3 className="mt-4 text-[34px] tracking-[-0.04em] font-semibold">
+                  {diamondCs[active].word}
+                </h3>
+
+                <p className="mt-2 text-[10px] uppercase tracking-[0.28em] text-white/45 font-medium">
+                  The {diamondCs[active].letter} Factor
+                </p>
               </div>
             </div>
           </div>

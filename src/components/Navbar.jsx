@@ -5,7 +5,7 @@ import { ShoppingBag, Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "Jewels", to: "/product" },
-  { label: "About", to: "/#about" },
+  { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -36,22 +36,25 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-          <Link to="/" className="flex flex-col leading-none group">
-            <span className="font-display text-2xl font-light tracking-widest text-obsidian group-hover:text-gold transition-colors duration-300">
-              VAIRAM
-            </span>
-            <span className="text-[9px] tracking-ultra-wide uppercase font-body text-warm-gray font-medium">
-              Shree Laksmi Kreations
-            </span>
+
+          {/* ── Logo ── */}
+          <Link to="/" className="flex items-center" aria-label="Vairam Home">
+            <img
+              src="/Logo.png"
+              alt="Vairam Diamond Jewellery Store"
+              className="h-12 w-auto object-contain brightness-0"
+            />
           </Link>
 
+          {/* ── Desktop Nav ── */}
           <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map(({ label, to }) => (
               <NavLink
                 key={label}
                 to={to}
+                end={label === "Home"}
                 className={({ isActive }) =>
-                  `text-xs tracking-extra-wide uppercase font-body font-medium transition-colors duration-300 relative group ${
+                  `text-xs tracking-[0.2em] uppercase font-body font-medium transition-colors duration-300 relative group ${
                     isActive ? "text-gold" : "text-obsidian hover:text-gold"
                   }`
                 }
@@ -62,10 +65,11 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          {/* ── Right Actions ── */}
+          <div className="flex items-center gap-3">
             <Link
               to="/contact"
-              className="hidden lg:inline-flex btn-primary text-[10px] px-6 py-3"
+              className="hidden lg:inline-flex btn-primary text-[10px] px-5 py-3"
             >
               Book Appointment
             </Link>
@@ -76,8 +80,9 @@ export default function Navbar() {
               <ShoppingBag size={16} />
             </button>
 
+            {/* Hamburger */}
             <button
-              className="lg:hidden flex items-center justify-center p-2"
+              className="lg:hidden flex items-center justify-center p-2 text-obsidian"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
@@ -87,6 +92,7 @@ export default function Navbar() {
         </div>
       </header>
 
+      {/* ── Mobile Menu Overlay ── */}
       <div
         className={`fixed inset-0 z-40 bg-obsidian flex flex-col lg:hidden transition-all duration-500 ${
           menuOpen
@@ -95,14 +101,14 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
-          <div className="flex flex-col leading-none text-center mb-6">
-            <span className="font-display text-4xl font-light tracking-widest text-cream">
-              VAIRAM
-            </span>
-            <span className="text-[9px] tracking-ultra-wide uppercase font-body text-gold font-medium mt-1">
-              Shree Laksmi Kreations
-            </span>
-          </div>
+          {/* Logo in mobile menu */}
+          <Link to="/" onClick={() => setMenuOpen(false)} className="mb-4">
+            <img
+              src="/logo-navbar.png"
+              alt="Vairam Diamond Jewellery Store"
+              className="h-16 w-auto object-contain brightness-0 invert"
+            />
+          </Link>
 
           {navLinks.map(({ label, to }, i) => (
             <Link
@@ -110,7 +116,7 @@ export default function Navbar() {
               to={to}
               onClick={() => setMenuOpen(false)}
               className="font-display text-3xl font-light text-cream hover:text-gold transition-colors duration-300"
-              style={{ transitionDelay: `${i * 50}ms` }}
+              style={{ transitionDelay: `${i * 60}ms` }}
             >
               {label}
             </Link>
@@ -119,7 +125,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-4 border border-gold text-gold text-xs tracking-extra-wide uppercase font-body font-medium px-10 py-4 hover:bg-gold hover:text-obsidian transition-all duration-300"
+            className="mt-4 border border-gold text-gold text-xs tracking-[0.2em] uppercase font-body font-medium px-10 py-4 hover:bg-gold hover:text-obsidian transition-all duration-300"
           >
             Book Appointment
           </Link>

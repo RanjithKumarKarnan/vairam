@@ -25,22 +25,22 @@ export const collections = [
   {
     name: "Bridal Collection",
     description: "Exquisite bridal jewelry for your special day",
-    image: "bridal"
+    image: "/gold/one.avif"
   },
   {
     name: "Temple Collection",
     description: "Traditional designs inspired by heritage",
-    image: "temple"
+    image: "/gold/1.avif"
   },
   {
     name: "Antique Collection",
     description: "Timeless pieces with vintage charm",
-    image: "antique"
+    image: "/gold/2.avif"
   },
   {
     name: "Diamond Collection",
     description: "Brilliant diamond jewelry for every occasion",
-    image: "diamond"
+    image: "/gold/3.avif"
   }
 ];
 
