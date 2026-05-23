@@ -32,7 +32,7 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <section className="bg-white min-h-screen pt-[120px] pb-20 sm:pb-28">
+    <section className="bg-white min-h-screen pt-[100px] pb-20 sm:pb-28 mt-14">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           <div>

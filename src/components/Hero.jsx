@@ -50,7 +50,7 @@ export default function Hero() {
           <img
             src={slides[current].image}
             alt="Luxury Jewellery"
-            className="w-full h-[38vh] sm:h-[48vh] lg:h-[72vh] object-cover transition-all duration-700"
+            className="w-full h-[68vh] lg:h-[78vh] object-cover transition-all duration-700"
           />
 
           <div className="absolute inset-0 bg-black/45" />
@@ -103,11 +103,10 @@ export default function Hero() {
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
-                className={`transition-all duration-300 rounded-full ${
-                  current === index
-                    ? "w-8 h-[5px] bg-[#C6A769]"
-                    : "w-2.5 h-2.5 bg-white/40"
-                }`}
+                className={`transition-all duration-300 rounded-full ${current === index
+                  ? "w-8 h-[5px] bg-[#C6A769]"
+                  : "w-2.5 h-2.5 bg-white/40"
+                  }`}
               />
             ))}
           </div>

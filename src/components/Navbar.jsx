@@ -29,20 +29,23 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-cream/95 backdrop-blur-md shadow-sm border-b border-light-gray"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${menuOpen
+            ? "bg-transparent" // Keeps header transparent when menu is open so it blends with the dark overlay
+            : scrolled
+              ? "bg-cream/95 backdrop-blur-md shadow-sm border-b border-light-gray"
+              : "bg-transparent"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
 
           {/* ── Logo ── */}
-          <Link to="/" className="flex items-center" aria-label="Vairam Home">
+          <Link to="/" onClick={() => setMenuOpen(false)} className="flex items-center" aria-label="Vairam Home">
             <img
               src="/Logo.png"
               alt="Vairam Diamond Jewellery Store"
-              className="h-12 w-auto object-contain brightness-0"
+              // Inverts the logo to white when the dark mobile menu is open
+              className={`h-12 w-auto object-contain transition-all duration-300 ${menuOpen ? "brightness-0 invert" : "brightness-0"
+                }`}
             />
           </Link>
 
@@ -54,8 +57,7 @@ export default function Navbar() {
                 to={to}
                 end={label === "Home"}
                 className={({ isActive }) =>
-                  `text-xs tracking-[0.2em] uppercase font-body font-medium transition-colors duration-300 relative group ${
-                    isActive ? "text-gold" : "text-obsidian hover:text-gold"
+                  `text-xs tracking-[0.2em] uppercase font-body font-medium transition-colors duration-300 relative group ${isActive ? "text-gold" : "text-obsidian hover:text-gold"
                   }`
                 }
               >
@@ -82,7 +84,8 @@ export default function Navbar() {
 
             {/* Hamburger */}
             <button
-              className="lg:hidden flex items-center justify-center p-2 text-obsidian"
+              className={`lg:hidden flex items-center justify-center p-2 transition-colors duration-300 ${menuOpen ? "text-cream" : "text-obsidian"
+                }`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
@@ -94,21 +97,12 @@ export default function Navbar() {
 
       {/* ── Mobile Menu Overlay ── */}
       <div
-        className={`fixed inset-0 z-40 bg-obsidian flex flex-col lg:hidden transition-all duration-500 ${
-          menuOpen
+        className={`fixed inset-0 z-40 bg-obsidian flex flex-col lg:hidden transition-all duration-500 ${menuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
-        }`}
+          }`}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
-          {/* Logo in mobile menu */}
-          <Link to="/" onClick={() => setMenuOpen(false)} className="mb-4">
-            <img
-              src="/logo-navbar.png"
-              alt="Vairam Diamond Jewellery Store"
-              className="h-16 w-auto object-contain brightness-0 invert"
-            />
-          </Link>
 
           {navLinks.map(({ label, to }, i) => (
             <Link

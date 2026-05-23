@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/404";
-import About from "./components/About";
+import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndCondition from "./pages/TermsAndCondition";
 import ScrollToTop from "./components/ScrollToTop";
@@ -19,7 +19,7 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About/>}/>
+            <Route path="/about" element={<About />}/>
             <Route path="/product" element={<Product />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
