@@ -64,7 +64,7 @@ const Product = () => {
       : products.filter((item) => item.category === active);
 
   return (
-    <section className="bg-white min-h-screen pt-[120px] pb-20 sm:pb-28">
+    <section className="bg-white min-h-screen pt-[100px] pb-20 sm:pb-28 mt-14">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-black/10 pb-12">
           <div className="max-w-3xl">
@@ -106,11 +106,10 @@ const Product = () => {
             <button
               key={category}
               onClick={() => setActive(category)}
-              className={`h-11 px-6 border text-[11px] uppercase tracking-[0.24em] font-semibold transition-all duration-300 ${
-                active === category
-                  ? "bg-black text-white border-black"
-                  : "border-black/10 text-black hover:border-[#C6A769] hover:text-[#C6A769]"
-              }`}
+              className={`h-11 px-6 border text-[11px] uppercase tracking-[0.24em] font-semibold transition-all duration-300 ${active === category
+                ? "bg-black text-white border-black"
+                : "border-black/10 text-black hover:border-[#C6A769] hover:text-[#C6A769]"
+                }`}
             >
               {category}
             </button>

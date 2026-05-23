@@ -1,8 +1,13 @@
+import About from '../../components/About'
 
-const About = () => {
+const index = () => {
   return (
-    <div>About Page</div>
+    <>
+      <div className='mt-20'>
+        <About />
+      </div>
+    </>
   )
 }
 
-export default About    
+export default index  
