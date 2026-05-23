@@ -13,7 +13,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // State for Gold & Silver rates (Ready for API integration)
   const [rates, setRates] = useState({ gold: "₹7,250", silver: "₹92" });
 
   useEffect(() => {
