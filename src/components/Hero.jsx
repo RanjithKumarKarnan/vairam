@@ -44,13 +44,13 @@ export default function Hero() {
   };
 
   return (
-    <section className="bg-white border-b border-black/5 pt-[85px]">
+    <section className="bg-white border-b border-black/5 pt-[115px]">
       <div className="w-full">
         <div className="relative overflow-hidden">
           <img
             src={slides[current].image}
             alt="Luxury Jewellery"
-            className="w-full h-[68vh] lg:h-[78vh] object-cover transition-all duration-700"
+            className="w-full h-[64vh] lg:h-[74vh] object-cover transition-all duration-700"
           />
 
           <div className="absolute inset-0 bg-black/45" />
