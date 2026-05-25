@@ -9,17 +9,17 @@ import {
 const slides = [
   {
     image: "/gold/one.avif",
-    title: "Luxury Gold Collection",
+    title: "Fine Diamond Jewellery",
     subtitle: "Timeless Jewellery Crafted For Elegance",
   },
   {
     image: "/gold/1.avif",
-    title: "Exclusive Diamond Pieces",
+    title: "Minimalistic Collection",
     subtitle: "Premium Designs With Modern Sophistication",
   },
   {
     image: "/gold/2.avif",
-    title: "Wedding Collections",
+    title: "Certified Diamond Jewellery",
     subtitle: "Celebrate Every Moment With Luxury",
   },
 ];
@@ -62,7 +62,7 @@ export default function Hero() {
                   <div className="w-10 sm:w-14 h-px bg-[#C6A769]" />
 
                   <span className="text-white/90 text-[9px] sm:text-[11px] uppercase tracking-[0.28em] font-medium">
-                    Since 1980 • Premium Jewellery
+                    Since 2012 • Fine Diamond Jewellery
                   </span>
                 </div>
 

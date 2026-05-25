@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="flex animate-marquee whitespace-nowrap">
           {Array(8)
             .fill(
-              "✦ Luxury Jewellery · Timeless Craftsmanship · Since 1980 · Premium Collections ✦"
+              "✦ Luxury Jewellery · Timeless Craftsmanship · Since 2012 – Fine Diamond Jewellery✦"
             )
             .map((text, i) => (
               <span
@@ -65,7 +65,7 @@ export default function Footer() {
             <div className="flex flex-wrap items-center gap-4 mt-10">
               <div className="border border-[#C6A769]/25 px-5 py-3">
                 <p className="text-[10px] uppercase tracking-[0.28em] text-[#C6A769] font-medium">
-                  Hallmark Certified
+                  100% HUID  Certified
                 </p>
               </div>
 
@@ -120,6 +120,10 @@ export default function Footer() {
 
             <Link to="/terms-and-condition" className="text-[13px] text-white/45 hover:text-white transition-colors duration-300">
               Terms & Conditions
+            </Link>
+
+            <Link to="https://rancotechnology.com/" target="_blank" className="text-[13px] text-white/45 hover:text-white transition-colors duration-300">
+             Developer by Ranco Tech
             </Link>
           </div>
         </div>
