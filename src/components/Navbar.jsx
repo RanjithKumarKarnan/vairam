@@ -2,6 +2,28 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { ShoppingBag, Menu, X } from "lucide-react";
 
+// Custom SVG Icons to replace the removed Lucide brand icons
+const FacebookIcon = ({ size = 24, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const InstagramIcon = ({ size = 24, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
+const YoutubeIcon = ({ size = 24, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+  </svg>
+);
+
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "Jewels", to: "/product" },
@@ -12,8 +34,6 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const [rates, setRates] = useState({ gold: "₹7,250", silver: "₹92" });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -32,21 +52,27 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex flex-col transition-all duration-500">
 
-        <div className="bg-black py-2 overflow-hidden border-b border-white/10">
-          <div className="flex animate-marquee whitespace-nowrap">
-            {Array(10)
-              .fill(`✦ GOLD: ${rates.gold}/G · SILVER: ${rates.silver}/G ✦`)
-              .map((text, i) => (
-                <span
-                  key={i}
-                  className="mx-5 text-[10px] uppercase tracking-[0.32em] text-[#C6A769] font-medium"
-                >
-                  {text}
-                </span>
-              ))}
+        {/* ── Static Top Bar ── */}
+        <div className="bg-black py-2 border-b border-white/10 w-full">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
+            <span className="text-[7.5px] sm:text-[10px] uppercase tracking-[0.1em] sm:tracking-[0.2em] text-[#C6A769] font-medium truncate pr-2">
+              Vairam Jewellery · Shree Laksmi Kreations
+            </span>
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+              <a href="#" className="text-white/70 hover:text-[#C6A769] transition-colors duration-300" aria-label="Facebook">
+                <FacebookIcon size={14} />
+              </a>
+              <a href="#" className="text-white/70 hover:text-[#C6A769] transition-colors duration-300" aria-label="Instagram">
+                <InstagramIcon size={14} />
+              </a>
+              <a href="#" className="text-white/70 hover:text-[#C6A769] transition-colors duration-300" aria-label="Youtube">
+                <YoutubeIcon size={14} />
+              </a>
+            </div>
           </div>
         </div>
 
+        {/* ── Main Navigation Area ── */}
         <div
           className={`transition-all duration-500 ${menuOpen
             ? "bg-transparent"
@@ -115,6 +141,7 @@ export default function Navbar() {
         </div>
       </header>
 
+      {/* ── Mobile Menu Overlay ── */}
       <div
         className={`fixed inset-0 z-40 bg-black flex flex-col lg:hidden transition-all duration-500 ${menuOpen
           ? "opacity-100 pointer-events-auto"
@@ -141,6 +168,19 @@ export default function Navbar() {
           >
             Book Appointment
           </Link>
+
+          {/* Mobile Social Links */}
+          <div className="flex items-center gap-6 mt-4">
+            <a href="#" className="text-white/60 hover:text-[#C6A769] transition-colors duration-300" aria-label="Facebook">
+              <FacebookIcon size={20} />
+            </a>
+            <a href="#" className="text-white/60 hover:text-[#C6A769] transition-colors duration-300" aria-label="Instagram">
+              <InstagramIcon size={20} />
+            </a>
+            <a href="#" className="text-white/60 hover:text-[#C6A769] transition-colors duration-300" aria-label="Youtube">
+              <YoutubeIcon size={20} />
+            </a>
+          </div>
         </div>
       </div>
     </>
