@@ -59,14 +59,11 @@ export default function Navbar() {
               Vairam Jewellery · Shree Laksmi Kreations
             </span>
             <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-              <a href="#" className="text-white/70 hover:text-[#C6A769] transition-colors duration-300" aria-label="Facebook">
+              <a href="https://www.facebook.com/share/1D6gAGoo9K/?mibextid=wwXIfr" className="text-white/70 hover:text-[#C6A769] transition-colors duration-300" target="_blank" aria-label="Facebook">
                 <FacebookIcon size={14} />
               </a>
-              <a href="#" className="text-white/70 hover:text-[#C6A769] transition-colors duration-300" aria-label="Instagram">
+              <a href="https://www.instagram.com/southindianjewellery?igsh=MTFyZ2cyd3AybTc3aA==" className="text-white/70 hover:text-[#C6A769] transition-colors duration-300" target="_blank" aria-label="Instagram">
                 <InstagramIcon size={14} />
-              </a>
-              <a href="#" className="text-white/70 hover:text-[#C6A769] transition-colors duration-300" aria-label="Youtube">
-                <YoutubeIcon size={14} />
               </a>
             </div>
           </div>
@@ -171,14 +168,11 @@ export default function Navbar() {
 
           {/* Mobile Social Links */}
           <div className="flex items-center gap-6 mt-4">
-            <a href="#" className="text-white/60 hover:text-[#C6A769] transition-colors duration-300" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1D6gAGoo9K/?mibextid=wwXIfr" className="text-white/60 hover:text-[#C6A769] transition-colors duration-300" target="_blank" aria-label="Facebook">
               <FacebookIcon size={20} />
             </a>
-            <a href="#" className="text-white/60 hover:text-[#C6A769] transition-colors duration-300" aria-label="Instagram">
+            <a href="https://www.instagram.com/southindianjewellery?igsh=MTFyZ2cyd3AybTc3aA==" className="text-white/60 hover:text-[#C6A769] transition-colors duration-300" target="_blank" aria-label="Instagram">
               <InstagramIcon size={20} />
-            </a>
-            <a href="#" className="text-white/60 hover:text-[#C6A769] transition-colors duration-300" aria-label="Youtube">
-              <YoutubeIcon size={20} />
             </a>
           </div>
         </div>

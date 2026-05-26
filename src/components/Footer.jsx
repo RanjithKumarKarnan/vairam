@@ -65,7 +65,7 @@ export default function Footer() {
             <div className="flex flex-wrap items-center gap-4 mt-10">
               <div className="border border-[#C6A769]/25 px-5 py-3">
                 <p className="text-[10px] uppercase tracking-[0.28em] text-[#C6A769] font-medium">
-                  100% HUID  Certified
+                  100% HUID Certified
                 </p>
               </div>
 
@@ -99,8 +99,9 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-5">
-          <div className="flex items-center gap-3">
+        {/* ── Fixed Responsive Bottom Section ── */}
+        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
             <img
               src="/favicon.png"
               alt="Logo"
@@ -113,17 +114,27 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="text-[13px] text-white/45 hover:text-white transition-colors duration-300">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-3">
+            <Link
+              to="/privacy-policy"
+              className="text-[13px] text-white/45 hover:text-white transition-colors duration-300"
+            >
               Privacy Policy
             </Link>
 
-            <Link to="/terms-and-condition" className="text-[13px] text-white/45 hover:text-white transition-colors duration-300">
+            <Link
+              to="/terms-and-condition"
+              className="text-[13px] text-white/45 hover:text-white transition-colors duration-300"
+            >
               Terms & Conditions
             </Link>
 
-            <Link to="https://rancotechnology.com/" target="_blank" className="text-[13px] text-white/45 hover:text-white transition-colors duration-300">
-             Developer by Ranco Tech
+            <Link
+              to="https://rancotechnology.com/"
+              target="_blank"
+              className="text-[13px] text-white/45 hover:text-white transition-colors duration-300"
+            >
+              Developed by Ranco Tech
             </Link>
           </div>
         </div>
