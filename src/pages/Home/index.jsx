@@ -5,6 +5,7 @@ import WhyVairam from "../../components/Whyvairam";
 import Diamonds from "../../components/Diamond";
 import Process from "../../components/Process";
 import Offers from "../../components/Offers";
+import SavingsScheme from "../../components/SavingsScheme";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <About />
       <Collections />
       <WhyVairam />
+      <SavingsScheme />
       <Process />
       <Diamonds />
       <Offers />
