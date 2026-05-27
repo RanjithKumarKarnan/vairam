@@ -43,7 +43,7 @@ const Product = () => {
       : products.filter((item) => item.category === active);
 
   return (
-    <section className="bg-white min-h-screen pt-[100px] pb-20 sm:pb-28 mt-14">
+    <section className="bg-white min-h-screen pt-[100px] pb-20 sm:pb-28 mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-black/10 pb-12">
           <div className="max-w-3xl">
