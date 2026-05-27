@@ -8,17 +8,17 @@ import {
 
 const slides = [
   {
-    image: "/gold/one.avif",
+    image: "/hero/1.png",
     title: "Fine Diamond Jewellery",
     subtitle: "Timeless Jewellery Crafted For Elegance",
   },
   {
-    image: "/gold/1.avif",
+    image: "/hero/2.jpeg",
     title: "Minimalistic Collection",
     subtitle: "Premium Designs With Modern Sophistication",
   },
   {
-    image: "/gold/2.avif",
+    image: "/hero/3.jpeg",
     title: "Certified Diamond Jewellery",
     subtitle: "Celebrate Every Moment With Luxury",
   },
