@@ -13,45 +13,24 @@ const categories = [
 const products = [
   {
     id: 1,
-    image: "/gold/one.avif",
+    image: "/products/1.jpeg",
     category: "Temple",
     title: "Temple Necklace",
     price: "₹1,25,000",
   },
   {
     id: 2,
-    image: "/gold/1.avif",
+    image: "/products/2.jpeg",
     category: "Bridal",
     title: "Bridal Gold Set",
     price: "₹2,40,000",
   },
   {
     id: 3,
-    image: "/gold/2.avif",
+    image: "/products/3.jpeg",
     category: "Diamond",
     title: "Diamond Elegance",
     price: "₹3,10,000",
-  },
-  {
-    id: 4,
-    image: "/gold/1.avif",
-    category: "Luxury Gold",
-    title: "Luxury Bangles",
-    price: "₹95,000",
-  },
-  {
-    id: 5,
-    image: "/gold/3.avif",
-    category: "Temple",
-    title: "Heritage Pendant",
-    price: "₹78,000",
-  },
-  {
-    id: 6,
-    image: "/gold/one.avif",
-    category: "Bridal",
-    title: "Royal Bridal Set",
-    price: "₹4,20,000",
   },
 ];
 
@@ -101,7 +80,7 @@ const Product = () => {
           </Link>
         </div>
 
-        <div className="flex flex-wrap gap-3 mt-12">
+        {/* <div className="flex flex-wrap gap-3 mt-12">
           {categories.map((category) => (
             <button
               key={category}
@@ -114,7 +93,7 @@ const Product = () => {
               {category}
             </button>
           ))}
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 mt-14">
           {filteredProducts.map((product) => (
@@ -126,27 +105,27 @@ const Product = () => {
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-black/15 transition-all duration-500" />
 
-                <div className="absolute top-5 left-5">
+                {/* <div className="absolute top-5 left-5">
                   <span className="bg-black text-white px-4 py-2 text-[10px] uppercase tracking-[0.24em] font-medium">
                     {product.category}
                   </span>
-                </div>
+                </div> */}
               </div>
 
               <div className="p-7">
-                <h3 className="text-[28px] tracking-[-0.04em] font-semibold text-black">
+                {/* <h3 className="text-[28px] tracking-[-0.04em] font-semibold text-black">
                   {product.title}
-                </h3>
+                </h3> */}
 
                 <div className="flex items-center justify-between mt-5">
-                  <p className="text-[18px] font-semibold text-[#C6A769]">
+                  {/* <p className="text-[18px] font-semibold text-[#C6A769]">
                     {product.price}
-                  </p>
+                  </p> */}
 
                   <Link
                     to="/contact"

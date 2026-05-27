@@ -21,7 +21,7 @@ function CollectionCard({ item, index }) {
           <img
             src={item.image}
             alt={item.title}
-            className="w-full h-[320px] sm:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-[320px] sm:h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
           />
 
           <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-500" />

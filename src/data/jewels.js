@@ -24,24 +24,19 @@ export const diamondCs = [
 export const collections = [
   {
     name: "Bridal Collection",
-    description: "Exquisite bridal jewelry for your special day",
-    image: "/gold/one.avif"
+    // description: "Exquisite bridal jewelry for your special day",
+    image: "/products/1.jpeg"
   },
   {
     name: "Temple Collection",
-    description: "Traditional designs inspired by heritage",
-    image: "/gold/1.avif"
+    // description: "Traditional designs inspired by heritage",
+    image: "/products/2.jpeg"
   },
   {
     name: "Antique Collection",
-    description: "Timeless pieces with vintage charm",
-    image: "/gold/2.avif"
+    // description: "Timeless pieces with vintage charm",
+    image: "/products/3.jpeg"
   },
-  {
-    name: "Diamond Collection",
-    description: "Brilliant diamond jewelry for every occasion",
-    image: "/gold/3.avif"
-  }
 ];
 
 export const whyVairam = [

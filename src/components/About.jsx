@@ -29,7 +29,7 @@ export default function About() {
             <div className="relative max-w-[520px]">
               <div className="border border-[#C6A769]/25 p-3 bg-white">
                 <img
-                  src="/gold/one.avif"
+                  src="/about.jpeg"
                   alt="Jewellery Craftsmanship"
                   className="w-full h-[420px] sm:h-[560px] object-cover"
                 />
