@@ -9,6 +9,7 @@ import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndCondition from "./pages/TermsAndCondition";
 import ScrollToTop from "./components/ScrollToTop";
+import SavingsScheme from "./pages/SavingSchecme/index";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/about" element={<About />}/>
             <Route path="/product" element={<Product />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/saving-schecme" element={<SavingsScheme />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-condition" element={<TermsAndCondition />} />
             <Route path="*" element={<NotFound />} />

@@ -43,7 +43,7 @@ const sections = [
 
 const PrivacyPolicy = () => {
   return (
-    <section className="bg-white min-h-screen pt-[120px] pb-20 sm:pb-28">
+    <section className="bg-white min-h-screen pt-[120px] pb-20 sm:pb-28 mt-20">
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
         <div className="border-b border-black/10 pb-12">
           <div className="flex items-center gap-3 mb-6">

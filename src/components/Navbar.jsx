@@ -28,6 +28,7 @@ const navLinks = [
   { label: "Home", to: "/" },
   { label: "Jewels", to: "/product" },
   { label: "About", to: "/about" },
+  { label: "Saving Schecme", to: "/saving-schecme" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -52,7 +53,6 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex flex-col transition-all duration-500">
 
-        {/* ── Static Top Bar ── */}
         <div className="bg-black py-2 border-b border-white/10 w-full">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
             <span className="text-[7.5px] sm:text-[10px] uppercase tracking-[0.1em] sm:tracking-[0.2em] text-[#C6A769] font-medium truncate pr-2">
@@ -69,7 +69,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* ── Main Navigation Area ── */}
         <div
           className={`transition-all duration-500 ${menuOpen
             ? "bg-transparent"
@@ -138,14 +137,13 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ── Mobile Menu Overlay ── */}
       <div
         className={`fixed inset-0 z-40 bg-black flex flex-col lg:hidden transition-all duration-500 ${menuOpen
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
           }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8">
+        <div className="flex flex-col items-center justify-center h-full gap-8 font-serif mt-26">
           {navLinks.map(({ label, to }, i) => (
             <Link
               key={label}
@@ -166,7 +164,6 @@ export default function Navbar() {
             Book Appointment
           </Link>
 
-          {/* Mobile Social Links */}
           <div className="flex items-center gap-6 mt-4">
             <a href="https://www.facebook.com/share/1D6gAGoo9K/?mibextid=wwXIfr" className="text-white/60 hover:text-[#C6A769] transition-colors duration-300" target="_blank" aria-label="Facebook">
               <FacebookIcon size={20} />
