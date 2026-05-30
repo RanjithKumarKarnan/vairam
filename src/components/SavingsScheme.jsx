@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Diamond, ArrowRight } from "lucide-react";
+import { Phone, Diamond, ArrowRight, Sparkles } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 
 // Custom SVG Icon for WhatsApp
@@ -19,23 +19,29 @@ const WhatsAppIcon = ({ size = 24, className = "" }) => (
 const steps = [
     {
         num: "01",
+        title: "Scan the App",
+        qrCode: "/qr.svg",
+    },
+    {
+        num: "02",
         title: "Choose Amount",
         text: "Select your comfortable monthly savings amount.",
     },
     {
-        num: "02",
-        title: "Save Regularly",
-        text: "Pay for 11 months continuously without interruption.",
-    },
-    {
         num: "03",
-        title: "Earn Benefits",
-        text: "Enjoy exclusive, special benefits from Vairam on maturity.",
+        title: "Save Regularly",
+        text: "Pay for 12 months continuously without interruption.",
     },
     {
         num: "04",
+        title: "Earn Benefits",
+        text: "Enjoy exclusive, special benefits from Vairam on maturity.",
+        highlight: "Benefit: No MC & No Wastage",
+    },
+    {
+        num: "05",
         title: "Redeem Luxury",
-        text: "Redeem your savings against exquisite diamond collections.",
+        text: "Redeem your savings against exquisite diamond collections, After 365 days.",
     },
 ];
 
@@ -66,8 +72,7 @@ export default function SavingsScheme() {
                     </div>
 
                     <h2 className="text-[38px] sm:text-[52px] lg:text-[68px] leading-[0.95] tracking-[-0.06em] font-semibold text-black">
-                        Vairam Diamond
-                        <br />
+                        Vairam <span className="italic font-serif text-[#C6A769]">Diamond & Gold </span>
                         Savings Scheme
                     </h2>
 
@@ -78,7 +83,7 @@ export default function SavingsScheme() {
                     </p>
 
                     <p className="mt-8 text-[15px] sm:text-[17px] leading-7 sm:leading-8 text-black/65">
-                        Introducing a smart and elegant way to own timeless diamond jewellery with easy monthly savings. Whether it’s a diamond ring, elegant earrings, minimal pendants, daily wear collections, or a luxurious necklace — your dream jewellery is now within reach.
+                        Introducing a smart and elegant way to own timeless diamond jewellery with easy monthly savings. Whether it’s a diamond ring, elegant earrings, minimal pendants, daily wear collections, or a luxurious necklace, Gold coins and Gold jewellery - your dream jewellery is now within reach.
                     </p>
                 </div>
 
@@ -94,23 +99,54 @@ export default function SavingsScheme() {
                         <div className="flex-1 h-px bg-black/5" />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
                         {steps.map((step, index) => (
                             <div
                                 key={step.num}
-                                className={`group border border-black/10 bg-[#fafafa] p-8 transition-all duration-700 hover:border-[#C6A769] hover:bg-white ${stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                                className={`group relative border border-black/10 bg-[#fafafa] p-8 transition-all duration-700 hover:border-[#C6A769] hover:bg-white ${stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                                     }`}
                                 style={{ transitionDelay: `${index * 150}ms` }}
                             >
                                 <span className="text-[32px] font-light text-[#C6A769]/40 group-hover:text-[#C6A769] transition-colors duration-300">
                                     {step.num}
                                 </span>
+
                                 <h4 className="text-[18px] tracking-[-0.03em] font-semibold text-black mt-6 mb-3">
                                     {step.title}
                                 </h4>
+
                                 <p className="text-[14px] leading-6 text-black/60">
                                     {step.text}
                                 </p>
+
+                                {/* Render QR Code if it exists in the step data */}
+                                {step.qrCode && (
+                                    <div className="border border-black/10 p-2 bg-white inline-block">
+                                        <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gray-100 flex items-center justify-center relative">
+                                            {/* Fallback styling for the image in case it's missing initially */}
+                                            <span className="absolute text-[10px] text-black/40 text-center px-2">QR Placeholder</span>
+                                            <img
+                                                src={step.qrCode}
+                                                alt="Scan QR to Download"
+                                                className="relative z-10 w-full h-full object-cover mix-blend-multiply"
+                                                onError={(e) => {
+                                                    // Hides the broken image icon if dummy file doesn't exist yet
+                                                    e.target.style.display = 'none';
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Highlight Badge specifically for the 12-month completion */}
+                                {step.highlight && (
+                                    <div className="mt-6 inline-flex items-center gap-2 bg-[#C6A769]/10 border border-[#C6A769]/30 px-3 py-2 rounded-sm">
+                                        <Sparkles size={14} className="text-[#C6A769]" />
+                                        <span className="text-[#C6A769] text-[10px] uppercase tracking-[0.1em] font-bold">
+                                            {step.highlight}
+                                        </span>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>

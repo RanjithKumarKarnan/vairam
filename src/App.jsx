@@ -23,7 +23,7 @@ export default function App() {
             <Route path="/about" element={<About />}/>
             <Route path="/product" element={<Product />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/saving-schecme" element={<SavingsScheme />} />
+            <Route path="/saving-scheme" element={<SavingsScheme />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-condition" element={<TermsAndCondition />} />
             <Route path="*" element={<NotFound />} />

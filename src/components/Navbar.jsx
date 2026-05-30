@@ -26,9 +26,9 @@ const YoutubeIcon = ({ size = 24, className = "" }) => (
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "Jewels", to: "/product" },
   { label: "About", to: "/about" },
-  { label: "Saving Schecme", to: "/saving-schecme" },
+  { label: "Jewels", to: "/product" },
+  { label: "Saving Scheme", to: "/saving-scheme" },
   { label: "Contact", to: "/contact" },
 ];
 

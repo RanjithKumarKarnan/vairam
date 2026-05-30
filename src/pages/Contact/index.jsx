@@ -20,7 +20,13 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Working Hours",
-    value: "Mon - Sat : 10:00 AM - 8:00 PM",
+    value: (
+      <div className="flex flex-col gap-0.5 mt-0.5">
+        <span>Mon - Sat : 11:00 AM - 8:00 PM</span>
+        <span className="text-[12.5px] opacity-75">Lunch Break : 2:30 PM - 5:00 PM</span>
+        <span className="text-[#C6A769] font-medium pt-1">Sunday : Holiday</span>
+      </div>
+    ),
   },
 ];
 
@@ -117,9 +123,9 @@ const Contact = () => {
                     <h3 className="text-[16px] sm:text-[18px] tracking-[-0.03em] font-semibold text-black">
                       {item.title}
                     </h3>
-                    <p className="mt-1 sm:mt-2 text-[14px] leading-6 sm:leading-7 text-black/60 break-words">
+                    <div className="mt-1 sm:mt-2 text-[14px] leading-6 sm:leading-7 text-black/60 break-words">
                       {item.value}
-                    </p>
+                    </div>
                   </div>
                 </div>
               ))}

@@ -42,7 +42,7 @@ export const collections = [
 export const whyVairam = [
   {
     title: "Heritage",
-    description: "Four generations of expertise in crafting fine jewelry"
+    description: "Four generations of expertise in crafting fine Gold and Diamond jewelry"
   },
   {
     title: "Quality",

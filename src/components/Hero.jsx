@@ -22,6 +22,11 @@ const slides = [
     title: "Certified Diamond Jewellery",
     subtitle: "Celebrate Every Moment With Luxury",
   },
+  {
+    image: "/hero/4.jpeg",
+    title: "No MC & No Wastage",
+    subtitle: "Scan the QR",
+  },
 ];
 
 export default function Hero() {
@@ -88,10 +93,10 @@ export default function Hero() {
                   </Link>
 
                   <Link
-                    to="/contact"
+                    to="#"
                     className="h-11 sm:h-13 px-5 sm:px-8 border border-white/25 text-white text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium inline-flex items-center transition-all duration-300 hover:bg-white hover:text-black"
                   >
-                    Book Appointment
+                    Scan the App
                   </Link>
                 </div>
               </div>
